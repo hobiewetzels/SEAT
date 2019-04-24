@@ -1,12 +1,39 @@
+
+
+//global vars
+var mousexpos = 0;
+var mouseypos = 0;
+var rx;
+
+
 function setup() {
-  createCanvas(640, 480);
+  let myCanvas = createCanvas(970, 250);
+  myCanvas.parent('myContainer');
+  background('#ffde4a');
+
+  //global vars
+
+
+  rx = random(100, 500);
+
+
 }
 
 function draw() {
-  if (mouseIsPressed) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-  ellipse(mouseX, mouseY, 80, 80);
+  noStroke();
+  fill('#ffde4a');
+  quad(mousexpos, 250, mousexpos, 0, 970, 0, 970, 250)
+  //fill('');
+  //rect(0, 0, mousexpos, 250);
+  fill('#e63a2b');
+  quad(0, 250, 0, 0, mousexpos, 0, mousexpos, 250)
+  fill('#84c497');
+  quad(0, 250, 0, 0, mousexpos - rx , 0, mousexpos - rx, 250)
 }
+
+$( document ).ready(function() {
+  $( "#art" ).mousemove(function( event ) {
+    mousexpos = event.pageX;
+    mouseypos = event.pageY;
+  });
+});
