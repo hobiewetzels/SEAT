@@ -6,34 +6,36 @@
 var mousexpos = 0;
 var mouseypos = 0;
 var rx;
-var numbSq = 2000;
-var xin = 0;
-var yin = 0;
+var numbSq = 1000;
+var xin = Math.random(970);
+var yin = Math.random(250);
 var colorPick = 0;
-var r = 10;
+var rin = 0;
+var xinc = 10;
+var angle = 0;
 
 
 //create array
 var squares = new Array();
-var colors = ["#e63a2b", "#84c497"];
+var colors = ["#e63a2b", "#84c497", "#ffde4a"];
 
 for (i = 0; i < numbSq; i++) {
   squares.push({
-    x: xin,
-    y: yin,
-    r = 10,
+    x: Math.floor(Math.random() * 970),
+    y: Math.floor(Math.random() * 250),
+    r: rin,
     color: colors[colorPick]
   });
   //increases
   xin += xinc;
+  //on new row
   if (xin > 970){
-    yin += 10;
-    r =+ 10;
-    xin = 0;
+    //yin += 10;
+    //xin = 0;
   }
 
   colorPick += 1;
-  if (colorPick == 2){
+  if (colorPick == 3){
     colorPick = 0;
   }
 }
@@ -41,6 +43,7 @@ for (i = 0; i < numbSq; i++) {
 console.log(squares);
 
 function setup() {
+
   let myCanvas = createCanvas(970, 250);
   myCanvas.parent('myContainer');
   background('#ffde4a');
@@ -55,11 +58,11 @@ function draw() {
   for (i = 0; i < squares.length; i++) {
 
     //functions
-    //move(i);
+    move(i);
     display(i);
 
     //
-    rect(squares[i].x, squares[i].y, 10, 10);
+    rect(squares[i].x, squares[i].y, squares[i].r, squares[i].r);
   }
   
 }
@@ -70,11 +73,8 @@ function display(i){
 }
 
 function move(i){
-  squares[i].x += 1;
-  //reset
-  if (squares[i].x > 970 + 20){
-    squares[i].x = -20;
-  }
+angle += 0.00001;
+squares[i].r = sin(angle) * 50;
 }
 
 $( document ).ready(function() {

@@ -1,0 +1,83 @@
+/* Typography */
+@font-face{
+    font-family: 'SEAT-bnc-black';
+    src: url('fonts/Web/woff/SEATBCN-Black.woff') format('woff');
+}
+@font-face{
+    font-family: 'SEAT-bnc-regular';
+    src: url('fonts/Web/woff/SEATBCN-Regular.woff') format('woff');
+}
+
+#myContainer{
+width: 970px;
+}
+#art{
+    position: absolute;
+    z-index: 100;
+    width: 970px;
+    height: 250px;
+    
+}
+.container-left{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+.container-right{
+    float: right;
+    vertical-align: top;
+    padding: 40px;
+    padding-right: 60px;
+}
+.car_asset{
+    width: 46%;
+    display: inline-block;
+    position: absolute;
+    left: calc(50% - 285px);
+}
+
+h1{
+    font-family: 'SEAT-bnc-black';
+    font-size: 40px;
+    margin: 0;
+}
+p{
+    font-family: 'SEAT-bnc-regular';
+    font-size: 16px;
+    margin: 0;
+}
+h2{
+    font-family: 'SEAT-bnc-black';
+    font-size: 20px;
+    margin: 0;
+}
+ul{
+    font-family: 'SEAT-bnc-regular';
+    font-size: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    padding-top: 5px;
+}
+.logo{
+    width: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+}
+.price-container{
+    margin-top: 20px;
+}
+.cta{
+    position: absolute;
+    bottom: 0;
+    margin: 20px;
+    margin-left: 0px;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}

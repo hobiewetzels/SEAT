@@ -6,9 +6,9 @@
 var mousexpos = 0;
 var mouseypos = 0;
 var rx;
-var numbSq = 1000;
+var numbSq = 10;
 var xin = Math.random(970);
-var yin = -400;
+var yin = 0;
 var colorPick = 0;
 var rin = 0;
 var xinc = 10;
@@ -20,6 +20,9 @@ var c1;
 var c2;
 const Y_AXIS = 1;
 const X_AXIS = 2;
+var leftin = true;
+
+
 
 //create array
 var squares = new Array();
@@ -27,22 +30,21 @@ var colors = ["#84c497", "#ffde4a"];
 
 for (i = 0; i < numbSq; i++) {
   squares.push({
-    x: Math.floor(Math.random() * 970),
-    y: Math.floor(Math.random() * 250),
+    x: 0,
+    y: yin,
     r: rin,
-    color: colors[colorPick]
+    color: colors[colorPick],
+    left: leftin
   });
-  //increases
-  xin += xinc;
-  //on new row
-  if (xin > 970){
-    //yin += 10;
-    //xin = 0;
-  }
-
+  yin += 30;
   colorPick += 1;
   if (colorPick == 2){
     colorPick = 0;
+  }
+  if (isOdd(i) == 1){
+    leftin = true;
+  }else{
+    leftin = false;
   }
 }
 
@@ -63,19 +65,14 @@ function draw() {
   background('#ffde4a');
   //noStroke();
   rectMode(RADIUS); 
-  //for (i = 0; i < squares.length; i++) {
+  for (i = 0; i < squares.length; i++) {
+    if (squares[i].left){
+    setGradient(squares[i].x, squares[i].y, 970, 30, c1, c2, X_AXIS);
+    }else{
+    setGradient(squares[i].x, squares[i].y, 970, 30, c2, c1, X_AXIS);
+    }
+  }
 
-    //functions
-
-    //display(i);
-
-    //
-    //rect(squares[i].x, squares[i].y, squares[i].r, 2000);
-  //}
-  //move(i);
-    setGradient(0, 0, 970, 250, c1, c2, X_AXIS);
-
-  
 }
 
 //functions
@@ -116,6 +113,10 @@ function setGradient(x, y, w, h, c1, c2, axis) {
       line(i, y, i, y + h);
     }
   }
+}
+
+function isOdd(num) { 
+  return num % 2;
 }
 
 $( document ).ready(function() {
