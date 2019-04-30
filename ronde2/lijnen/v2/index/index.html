@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js example</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="sketch.js"></script>
+    <style>
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../_assets/main.css">
+  </head>
+  <body>
+      <div id='myContainer'>
+        <div id="art" style="display: none">
+          <div class="container-left">
+            <h1>SEAT<br>Ibiza</h1>
+            <div class="price-container">
+              <p>Vanaf</p>
+              <h2>€ 13.250</h2>
+            </div>
+          </div>
+          <img class="car_asset" src="../_assets\TRIMLINE_IBIZANF_FR_door-5_rim-40M_lamp-8IE_color-2Y2Y_view-04.png" alt="">
+          <div class="container-right">
+            <h2>Instappen en upgraden</h2>
+            <ul>
+              <li>+ Licht- en regensensor</li>
+              <li>+ Cruise Control</li>
+              <li>+ Safety Assist</li>
+            </ul>
+            <button class="cta"><h2>Ontdek de actie</h2></button>
+            <img class="logo" src="../_assets/Black.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="slidecontainer" style="
+        position: absolute; right: 0; top: 0; padding: 50px;">
+
+          <!-- STARTERS -->
+          <h1>starters</h1>
+          number of lines:<br>
+          <input type="range" min="0" max="1000" value="100" id="slider3">
+          <div id ="output3"></div>
+          xstart:<br>
+          <input type="range" min="-1000" max="2000" value="840" id="xstart_input">
+          <div id ="xstart_output"></div>
+          ystart:<br>
+          <input type="range" min="-1000" max="3000" value="500" id="ystart_input">
+          <div id ="ystart_output"></div>
+          binstart:<br>
+          <input type="range" min="-1500" max="1500" value="0" id="binstart_input">
+          <div id ="binstart_output"></div>
+          binstart2:<br>
+          <input type="range" min="-1500" max="1500" value="800" id="binstart2_input">
+          <div id ="binstart2_output"></div>
+          binstart3:<br>
+          <input type="range" min="-1500" max="1500" value="-300" id="binstart3_input">
+          <div id ="binstart3_output"></div>
+          binstart4:<br>
+          <input type="range" min="-1500" max="1500" value="500" id="binstart4_input">
+          <div id ="binstart4_output"></div>
+
+          <!-- INCREASES -->
+          <h1>increases</h1>
+          xinc:<br>
+          <input type="range" min="0" max="600" value="10" id="slider1">
+          <div id ="output1"></div>
+          yinc:<br>
+          <input type="range" min="0" max="300" value="100" id="slider2">
+          <div id ="output2"></div>
+          binc:<br>
+          <input type="range" min="-20" max="20" value="0" id="binc_input">
+          <div id ="binc_output"></div>
+          binc2:<br>
+          <input type="range" min="-20" max="20" value="0" id="binc2_input">
+          <div id ="binc2_output"></div>
+          binc3:<br>
+          <input type="range" min="-20" max="20" value="0" id="binc3_input">
+          <div id ="binc3_output"></div>
+          binc4:<br>
+          <input type="range" min="-20" max="20" value="0" id="binc4_input">
+          <div id ="binc4_output"></div>
+
+          <!-- MAX VALUES -->
+          <h1>Max values</h1>
+         
+
+          max X:<br>
+          <input type="range" min="0" max="2000" value="1000" id="slider4" >
+          <div id ="output4"></div>
+
+        </div>
+      </div>
+  </body>
+</html>
